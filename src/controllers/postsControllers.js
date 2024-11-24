@@ -22,12 +22,11 @@ export async function createPost(req, res) {
 }
 
 export async function uploadImage(req, res) {
-    const descricao = await gerarDescricaoComGemini(imgBuffer);
 
     const newPost = {
-        descricao,
+        descricao: "",
         imgUrl: req.file.originalname,
-        alt: req.body.alt
+        alt: ""
     };
 
     try {
